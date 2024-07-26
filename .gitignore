@@ -1,0 +1,17 @@
+#folders ignored
+
+lib/
+uploads/
+dashboard/lib/
+
+#files ignored
+
+cookingschedule.php
+controllers/schedulecode.php
+dashboard/view-schedule.php
+dashboard/edit-schedule.php
+dashboard/controllers/schedulecode.php
+dashboard/view-ads.php
+dashboard/add-ads.php
+dashboard/controllers/adcode.php
+

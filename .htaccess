@@ -1,0 +1,17 @@
+RewriteEngine On
+
+#Redirect trailing slashes if Not a folder...
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_URI} (.+)/$
+RewriteRule ^ %1 [L,R=301]
+
+#Remove .php extention
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
+RewriteRule ^category/([a-zA-Z0-9-]+) category.php?title=$1
+RewriteRule ^post/([a-zA-Z0-9-]+) post.php?title=$1
+RewriteRule ^answer/([a-zA-Z0-9-]+) answer.php?title=$1
+
+ErrorDocument 404 http://localhost/php-projects/portfolio/404

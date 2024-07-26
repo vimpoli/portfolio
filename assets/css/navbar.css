@@ -1,0 +1,12 @@
+.navbar {
+    padding: 0px;
+}
+.navbar-bg {
+    background-color: #050C9C;
+    color: #ffffff;
+}
+.nav-link {
+    border-right: 1px solid #f5f7fa;
+    padding: 8px 16px !important;
+    font-size: 17px;
+}
