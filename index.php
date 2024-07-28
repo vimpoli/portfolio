@@ -62,266 +62,238 @@ include('includes/navbar.php');
             <?php
             }
             ?>
-            <div id="skill">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h6 class="fw-bold">Skills</h6>
-                        <div class="pt-1 bg-success rounded my-3"></div>
-                    </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <h6 class="fw-bold">Skills</h6>
+                    <div class="pt-1 bg-success rounded my-3"></div>
                 </div>
-                <div class="row">
-                    <?php
-                    $query = mysqli_query($conn, "SELECT skill FROM skills WHERE user_id='$user_id' AND status='1'");
-                    $count = 1;
-                    if (mysqli_num_rows($query) > 0) {
-                        foreach ($query as $skill) {
-                    ?>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-3">
-                                <div class="card card-body bg-warning py-2 border-0 shadow">
-                                    <?= $skill['skill'] ?>
-                                </div>
+            </div>
+            <div class="row">
+                <?php
+                $query = mysqli_query($conn, "SELECT skill FROM skills WHERE user_id='$user_id' AND status='1'");
+                $count = 1;
+                if (mysqli_num_rows($query) > 0) {
+                    foreach ($query as $skill) {
+                ?>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-3">
+                            <div class="card card-body bg-warning py-2 border-0 shadow">
+                                <?= $skill['skill'] ?>
                             </div>
-                        <?php
-                        }
-                    } else {
-                        ?>
-                        <p class="text-center">No Record Found</p>
+                        </div>
                     <?php
                     }
+                } else {
                     ?>
-                </div>
+                    <p class="text-center">No Record Found</p>
+                <?php
+                }
+                ?>
             </div>
 
-            <div id="experience">
-                <div class="row">
-                    <div class="col-md-12">
-                        <hr>
-                    </div>
-                    <div class="col-md-12">
-                        <h6 class="fw-bold">Work Experiences</h6>
-                        <div class="pt-1 bg-success rounded my-3"></div>
-                    </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <hr>
                 </div>
-                <div class="table-responsive-sm shadow">
-                    <table class="table table-hover">
-                        <thead class="bg-dark text-light">
-                            <tr>
-                                <th>S.No.</th>
-                                <th>Designation</th>
-                                <th>Company</th>
-                                <th>From</th>
-                                <th>To</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $query = mysqli_query($conn, "SELECT * FROM experiences WHERE user_id ='$user_id' AND status='1'");
-                            $count = 1;
-                            if (mysqli_num_rows($query) > 0) {
-                                foreach ($query as $experience) {
-                            ?>
-                                    <tr>
-                                        <td><?= $count++ ?></td>
-                                        <td><?= $experience['designation'] ?></td>
-                                        <td><?= $experience['company_name'] ?></td>
-                                        <td><?= $experience['start_date'] ?></td>
-                                        <td><?= $experience['end_date'] ?></td>
-                                    </tr>
-                                <?php
-                                }
-                            } else {
-                                ?>
-                                <td class="text-center" colspan="6">No Record Found</td>
-                            <?php
-                            }
-                            ?>
-                        </tbody>
-                    </table>
+                <div class="col-md-12">
+                    <h6 class="fw-bold">Work Experiences</h6>
+                    <div class="pt-1 bg-success rounded my-3"></div>
                 </div>
             </div>
-
-            <div id="education">
-                <div class="row">
-                    <div class="col-md-12">
-                        <hr>
-                    </div>
-                    <div class="col-md-12">
-                        <h6 class="fw-bold">Academic Details</h6>
-                        <div class="pt-1 bg-success rounded my-3"></div>
-                    </div>
-                </div>
-                <div class="table-responsive-sm shadow">
-                    <table class="table table-hover">
-                        <thead class="bg-dark text-light">
-                            <tr>
-                                <th>S.No.</th>
-                                <th>Board Or University</th>
-                                <th>Level</th>
-                                <th>School Or College</th>
-                                <th>Percentage Or CGPA</th>
-                                <th>Passed Year</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $query = mysqli_query($conn, "SELECT * FROM qualifications WHERE user_id ='$user_id' AND status='1'");
-                            $count = 1;
-                            if (mysqli_num_rows($query) > 0) {
-                                foreach ($query as $edu_data) {
-                            ?>
-                                    <tr>
-                                        <td><?= $count++ ?></td>
-                                        <td><?php
-                                            $brd_or_uni = $edu_data['board_or_university'];
-
-                                            switch ($brd_or_uni) {
-                                                case 1:
-                                                    echo 'Government of Nepal';
-                                                    break;
-                                                case 2:
-                                                    echo 'HSEB &mid; NEB';
-                                                    break;
-                                                case 3:
-                                                    echo 'Tribhuwan University';
-                                                    break;
-                                                case 4:
-                                                    echo 'Pokhara University';
-                                                    break;
-                                                case 5:
-                                                    echo 'Purbanchal University';
-                                                    break;
-                                                case 6:
-                                                    echo 'Mid-Western University';
-                                                    break;
-                                                case 7:
-                                                    echo 'Kathmandu University';
-                                                    break;
-                                                case 8:
-                                                    echo 'Sanskrit University';
-                                                    break;
-                                                case 9:
-                                                    echo 'Far-Western University';
-                                                    break;
-                                                case 10:
-                                                    echo 'CTEVT';
-                                                    break;
-                                                case 11:
-                                                    echo 'Agriculture and Forestry University';
-                                                    break;
-                                            }
-                                            ?>
-                                        </td>
-                                        <td><?php
-                                            $level = $edu_data['level'];
-
-                                            switch ($level) {
-                                                case 1:
-                                                    echo 'SLC &mid; SEE';
-                                                    break;
-                                                case 2:
-                                                    echo '+2 &mid; PCL';
-                                                    break;
-                                                case 3:
-                                                    echo 'Bachelors';
-                                                    break;
-                                                case 4:
-                                                    echo 'Masters';
-                                                    break;
-                                            }
-                                            ?>
-                                        </td>
-                                        <td><?= $edu_data['college_name'] ?></td>
-                                        <td><?= $edu_data['percentage_or_cgpa'] ?></td>
-                                        <td><?= $edu_data['completion_year'] ?></td>
-                                    </tr>
-                                <?php
-                                }
-                            } else {
-                                ?>
-                                <td class="text-center" colspan="6">No Record Found</td>
+            <div class="table-responsive-sm shadow">
+                <table class="table table-hover">
+                    <thead class="bg-dark text-light">
+                        <tr>
+                            <th>S.No.</th>
+                            <th>Designation</th>
+                            <th>Company</th>
+                            <th>From</th>
+                            <th>To</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $query = mysqli_query($conn, "SELECT * FROM experiences WHERE user_id ='$user_id' AND status='1'");
+                        $count = 1;
+                        if (mysqli_num_rows($query) > 0) {
+                            foreach ($query as $experience) {
+                        ?>
+                                <tr>
+                                    <td><?= $count++ ?></td>
+                                    <td><?= $experience['designation'] ?></td>
+                                    <td><?= $experience['company_name'] ?></td>
+                                    <td><?= $experience['start_date'] ?></td>
+                                    <td><?= $experience['end_date'] ?></td>
+                                </tr>
                             <?php
                             }
+                        } else {
                             ?>
-                        </tbody>
-                    </table>
-                </div>
+                            <td class="text-center" colspan="6">No Record Found</td>
+                        <?php
+                        }
+                        ?>
+                    </tbody>
+                </table>
             </div>
 
-            <div id="training">
-                <div class="row">
-                    <div class="col-md-12">
-                        <hr>
-                    </div>
-                    <div class="col-md-12">
-                        <h6 class="fw-bold">Trainings</h6>
-                        <div class="pt-1 bg-success rounded my-3"></div>
-                    </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <hr>
                 </div>
-                <div class="table-responsive-sm shadow">
-                    <table class="table table-hover">
-                        <thead class="bg-dark text-light">
-                            <tr>
-                                <th>S.No.</th>
-                                <th>Name</th>
-                                <th>Institution</th>
-                                <th>From</th>
-                                <th>To</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $query = mysqli_query($conn, "SELECT * FROM trainings WHERE user_id ='$user_id' AND status='1'");
-                            $count = 1;
-                            if (mysqli_num_rows($query) > 0) {
-                                foreach ($query as $training) {
-                            ?>
-                                    <tr>
-                                        <td><?= $count++ ?></td>
-                                        <td><?= $training['name'] ?></td>
-                                        <td><?= $training['institution'] ?></td>
-                                        <td><?= $training['start_date'] ?></td>
-                                        <td><?= $training['end_date'] ?></td>
-                                    </tr>
-                                <?php
-                                }
-                            } else {
-                                ?>
-                                <td class="text-center" colspan="5">No Record Found</td>
+                <div class="col-md-12">
+                    <h6 class="fw-bold">Academic Details</h6>
+                    <div class="pt-1 bg-success rounded my-3"></div>
+                </div>
+            </div>
+            <div class="table-responsive-sm shadow">
+                <table class="table table-hover">
+                    <thead class="bg-dark text-light">
+                        <tr>
+                            <th>S.No.</th>
+                            <th>Board Or University</th>
+                            <th>Level</th>
+                            <th>School Or College</th>
+                            <th>Percentage Or CGPA</th>
+                            <th>Passed Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $query = mysqli_query($conn, "SELECT * FROM qualifications WHERE user_id ='$user_id' AND status='1'");
+                        $count = 1;
+                        if (mysqli_num_rows($query) > 0) {
+                            foreach ($query as $edu_data) {
+                        ?>
+                                <tr>
+                                    <td><?= $count++ ?></td>
+                                    <td><?php
+                                        $brd_or_uni = $edu_data['board_or_university'];
+
+                                        switch ($brd_or_uni) {
+                                            case 1:
+                                                echo 'Government of Nepal';
+                                                break;
+                                            case 2:
+                                                echo 'HSEB &mid; NEB';
+                                                break;
+                                            case 3:
+                                                echo 'Tribhuwan University';
+                                                break;
+                                            case 4:
+                                                echo 'Pokhara University';
+                                                break;
+                                            case 5:
+                                                echo 'Purbanchal University';
+                                                break;
+                                            case 6:
+                                                echo 'Mid-Western University';
+                                                break;
+                                            case 7:
+                                                echo 'Kathmandu University';
+                                                break;
+                                            case 8:
+                                                echo 'Sanskrit University';
+                                                break;
+                                            case 9:
+                                                echo 'Far-Western University';
+                                                break;
+                                            case 10:
+                                                echo 'CTEVT';
+                                                break;
+                                            case 11:
+                                                echo 'Agriculture and Forestry University';
+                                                break;
+                                        }
+                                        ?>
+                                    </td>
+                                    <td><?php
+                                        $level = $edu_data['level'];
+
+                                        switch ($level) {
+                                            case 1:
+                                                echo 'SLC &mid; SEE';
+                                                break;
+                                            case 2:
+                                                echo '+2 &mid; PCL';
+                                                break;
+                                            case 3:
+                                                echo 'Bachelors';
+                                                break;
+                                            case 4:
+                                                echo 'Masters';
+                                                break;
+                                        }
+                                        ?>
+                                    </td>
+                                    <td><?= $edu_data['college_name'] ?></td>
+                                    <td><?= $edu_data['percentage_or_cgpa'] ?></td>
+                                    <td><?= $edu_data['completion_year'] ?></td>
+                                </tr>
                             <?php
                             }
+                        } else {
                             ?>
-                        </tbody>
-                    </table>
+                            <td class="text-center" colspan="6">No Record Found</td>
+                        <?php
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <hr>
                 </div>
+                <div class="col-md-12">
+                    <h6 class="fw-bold">Trainings</h6>
+                    <div class="pt-1 bg-success rounded my-3"></div>
+                </div>
+            </div>
+            <div class="table-responsive-sm shadow">
+                <table class="table table-hover">
+                    <thead class="bg-dark text-light">
+                        <tr>
+                            <th>S.No.</th>
+                            <th>Name</th>
+                            <th>Institution</th>
+                            <th>From</th>
+                            <th>To</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $query = mysqli_query($conn, "SELECT * FROM trainings WHERE user_id ='$user_id' AND status='1'");
+                        $count = 1;
+                        if (mysqli_num_rows($query) > 0) {
+                            foreach ($query as $training) {
+                        ?>
+                                <tr>
+                                    <td><?= $count++ ?></td>
+                                    <td><?= $training['name'] ?></td>
+                                    <td><?= $training['institution'] ?></td>
+                                    <td><?= $training['start_date'] ?></td>
+                                    <td><?= $training['end_date'] ?></td>
+                                </tr>
+                            <?php
+                            }
+                        } else {
+                            ?>
+                            <td class="text-center" colspan="5">No Record Found</td>
+                        <?php
+                        }
+                        ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 </div>
-<div class="container my-4">
-    <hr>
-    <?php
-    $query = mysqli_query($conn, "SELECT url,ads FROM ads WHERE ads_type='2' AND status='1'");
-    if (mysqli_num_rows($query) > 0) {
-        foreach ($query as $home_banner_ads) {
-            if ($home_banner_ads['ads'] != NULL && file_exists('uploads/ads/' . $home_banner_ads['ads'])) :
-    ?>
-                <div id="bannerAd2" class="shadow">
-                    <a href="<?= $home_banner_ads['url'] ?>" target="<?= $home_banner_ads['url'] != NUll ? '_blank' : '' ?>">
-                        <img src="<?= base_url('uploads/ads/' . $home_banner_ads['ads']) ?>" class="img-fluid rounded w-100" alt="Ad">
-                    </a>
-                </div>
-    <?php
-            endif;
-        }
-    } else {
-        echo '';
-    }
-    ?>
-</div>
 
 <div class="container my-4">
     <div class="row py-3 justify-content-around bg-white shadow">
-        <h1 class="fw-bold">Contact Us</h1>
+        <h3 class="fw-bold">Contact Us</h3>
         <div class="col-md-6 mb-3">
             <div class="pt-1 bg-success rounded my-0 mb-4"></div>
             <form action="<?= base_url('controllers/messagecode') ?>" method="POST">
@@ -356,27 +328,7 @@ include('includes/navbar.php');
         </div>
     </div>
 </div>
-<div class="container my-4">
-    <hr>
-    <?php
-    $query = mysqli_query($conn, "SELECT url,ads FROM ads WHERE ads_type='2' AND status='1'");
-    if (mysqli_num_rows($query) > 0) {
-        foreach ($query as $home_banner_ads) {
-            if ($home_banner_ads['ads'] != NULL && file_exists('uploads/ads/' . $home_banner_ads['ads'])) :
-    ?>
-                <div id="bannerAd2" class="shadow">
-                    <a href="<?= $home_banner_ads['url'] ?>" target="<?= $home_banner_ads['url'] != NUll ? '_blank' : '' ?>">
-                        <img src="<?= base_url('uploads/ads/' . $home_banner_ads['ads']) ?>" class="img-fluid rounded w-100" alt="Ad">
-                    </a>
-                </div>
-    <?php
-            endif;
-        }
-    } else {
-        echo '';
-    }
-    ?>
-</div>
+
 <?php
 include('includes/footer.php');
 include('includes/scripts.php');

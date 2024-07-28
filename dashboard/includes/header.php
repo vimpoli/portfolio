@@ -16,9 +16,7 @@ include('auth.php');
     <title><?= isset($title) ? $title : '' ?></title>
     <link rel="stylesheet" href="lib/datatables/css/jquery.dataTables.min.css" />
     <link rel="stylesheet" href="lib/datatables/css/dataTables.bootstrap5.min.css" />
-    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-lite.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
 </head>
