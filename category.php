@@ -45,7 +45,7 @@ include('includes/navbar.php');
                                         <div class="card shadow mb-3 border-0 rounded-0">
                                             <div class="card-body">
                                                 <a href="<?= base_url('post/' . $post_item['slug']) ?>" class="text-decoration-none">
-                                                    <h4><?= $post_item['title']; ?></h4>
+                                                    <h5><?= $post_item['title']; ?></h5>
                                                 </a>
                                             </div>
                                             <label class="ps-3 py-2 bg-primary text-light">
