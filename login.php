@@ -2,7 +2,8 @@
 $page_title = 'Login';
 
 include('includes/header.php');
-include('includes/navbar.php')
+include('includes/navbar.php');
+include('auth.php');
 ?>
 <div class="container my-4">
     <div class="row justify-content-center">
