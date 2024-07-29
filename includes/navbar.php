@@ -58,7 +58,7 @@
                 else :
                 ?>
                  <li class="nav-item <?= $page == 'login.php' ? 'd-none' : '' ?>">
-                     <a href="<?= base_url('login') ?>" class="nav-link btn bg-primary rounded-0 text-white">Login</a>
+                     <a href="<?= base_url('login') ?>" class="nav-link bg-primary rounded-0 text-white">Login</a>
                  </li>
              <?php endif; ?>
          </ul>
