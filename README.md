@@ -28,10 +28,9 @@
 git clone https://github.com/blanqui-github/portfolio.git 
 
 ```
-2. Import Database 
-   bp_db.sql
+2. Import Database
+   - bp_db.sql
 ```
 3. User Credentials
-```
-   username: admin@exampe.com
-   password: admin
+   - username: admin@exampe.com
+   - password: admin
