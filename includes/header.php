@@ -9,7 +9,7 @@ include('config.php');
 <head>
     <meta charset="utf-8">
     <meta name="description" content="<?php if (isset($meta_description)) echo $meta_description; ?>">
-    <meta name="keywords" content="<?php if (isset($meta_keywords)) { echo $meta_keywords; } else { echo $meta_keywords; } ?>">
+    <meta name="keywords" content="<?php if (isset($meta_keywords)) echo $meta_keywords; ?>">
     <meta name="author" content="Bhim Prakash Oli">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= isset($page_title) ? $page_title : '' ?></title>
