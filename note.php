@@ -32,8 +32,8 @@ include('includes/navbar.php');
             $count = '1';
             if (mysqli_num_rows($query) > 0) {
             ?>
-                <div class="table-responsive-sm">
-                    <table class="table table-bordered table-sm border-light">
+                <div class="table-responsive-sm shadow">
+                    <table class="table table-borderless table-sm border-light">
                         <thead class="table-success">
                             <tr>
                                 <th>S.No.</th>
@@ -71,7 +71,7 @@ include('includes/navbar.php');
             $query = mysqli_query($conn, "SELECT title,slug FROM posts WHERE status='1' ORDER BY created_at DESC LIMIT 12");
             if (mysqli_num_rows($query) > 0) {
             ?>
-                <div class="table-responsive-sm">
+                <div class="table-responsive-sm shadow">
                     <table class="table table-borderless table-sm border-light">
                         <thead class="table-success">
                             <tr>

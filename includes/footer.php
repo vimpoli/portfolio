@@ -56,6 +56,5 @@
     <hr>
     <div class="text-center small">
         <p class="text-muted">Copyright &copy; <?= date('Y') ?> &mid; All rights reserved</p>
-        <p class="text-muted">Designed by: <a class="text-decoration-none fw-bold" href="https://bhimprakasholi.com.np">Bhim Oli</a></p>
     </div>
 </div>

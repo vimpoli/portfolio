@@ -33,7 +33,6 @@ include('includes/header.php');
                             <div class="form-group col-md-6 mb-3">
                                 <label>Upload Note</label>
                                 <input class="form-control" type="file" name="note">
-                                <small class="text-muted">File formats: .jpg or .pdf &mid; Size: less than 1 MB</small>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label>Meta Title</label>

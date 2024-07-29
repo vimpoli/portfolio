@@ -12,7 +12,7 @@
      </div>
  </div>
  <nav class="navbar navbar-expand-lg navbar-bg shadow-lg navbar-dark sticky-top container">
-     <a href="<?= base_url('') ?>" class="navbar-brand ps-2 fw-bold">BHIMPRAKASHOLI</a>
+     <a href="<?= base_url('') ?>" class="navbar-brand ps-3 fw-bold">BHIMPRAKASHOLI</a>
      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon text-sm-success"></span>
      </button>

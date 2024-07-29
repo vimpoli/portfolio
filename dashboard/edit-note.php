@@ -37,7 +37,6 @@ include('includes/header.php');
                                     <label>Upload Note</label> &mid; <?= pathinfo($note_data['note'], PATHINFO_FILENAME) ?>
                                     <input class="form-control" type="hidden" name="old_note" value="<?= $note_data['note'] ?>">
                                     <input class="form-control" type="file" name="new_note">
-                                    <small class="text-muted">File formats: .jpg or .pdf &mid; Size: less than 1 MB</small>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label>Meta Title</label>
