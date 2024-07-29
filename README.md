@@ -25,12 +25,12 @@
 ### Installation
 1. Clone the repository
 ```bash
-git clone https://github.com/blanqui-github/portfolio.git
+git clone https://github.com/blanqui-github/portfolio.git 
 
+```
 ### Import Database 
 - bp_db.sql
 
 ### User Credentials
 - username: admin@exampe.com
 - password: admin
- 
